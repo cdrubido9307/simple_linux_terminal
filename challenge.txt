@@ -1,0 +1,24 @@
+Please list any challenge problems you completed on this lab below:
+
+Lab 0:
+
+Challenge: (1 bonus point) Add support for a "NULL" entry in the PATH
+environment variable, i.e., two colons with nothing between them. 
+For example: PATH=/bin:/sbin::/usr/bin. In this example, the third entry 
+should be converted to the current working directory --- "./" would suffice.
+
+The code we implemented looks in the path for the pattern "::" and replaces that
+pattern with a '.' as an entry in the table. We remove the trailing slash as 
+that was one of the expected behaviors for lab0.
+The implementation of this challenge can be found on jobs.c in the helper
+function char *replace_pattern
+
+EX: PATH=/bin:/sbin::/usr/bin
+Returns: 
+===== Begin Path Table =====
+Prefix  0: [/bin]
+Prefix  1: [/sbin]
+Prefix  2: [.]
+Prefix  3: [/usr]
+Prefix  4: [/bin]
+===== End Path Table =====
